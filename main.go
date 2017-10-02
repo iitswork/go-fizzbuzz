@@ -6,24 +6,24 @@ import (
 	"strings"
 )
 
-// IsDevideBy return true if number can devide by three
+// IsDevideByThree return true if number can devide by three
 func IsDevideByThree(number int) bool {
 	return number%3 == 0
 }
 
-// IsDevideBy return true if number can devide by five
+// IsDevideByFive return true if number can devide by five
 func IsDevideByFive(number int) bool {
 	return number%5 == 0
 }
 
-// IsContain return true if word contain Three
+// IsContainThree return true if word contain Three
 func IsContainThree(number int) bool {
 	numberSting := strconv.Itoa(number)
 
 	return strings.Contains(numberSting, "3")
 }
 
-// IsContain return true if word contain Five
+// IsContainFive return true if word contain Five
 func IsContainFive(number int) bool {
 	numberSting := strconv.Itoa(number)
 
