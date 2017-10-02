@@ -14,9 +14,9 @@ func TestDevideByThree(t *testing.T) {
 		{3, true},
 		{4, false},
 	} {
-		got := DevideBy(c.in, 3)
+		got := IsDevideByThree(c.in)
 		if got != c.want {
-			t.Errorf("DevideByThree(%d,3) == %t, want %t", c.in, got, c.want)
+			t.Errorf("DevideByThree(%d) == %t, want %t", c.in, got, c.want)
 		}
 	}
 }
@@ -31,9 +31,9 @@ func TestDevideByFive(t *testing.T) {
 		{4, false},
 		{5, true},
 	} {
-		got := DevideBy(c.in, 5)
+		got := IsDevideByFive(c.in)
 		if got != c.want {
-			t.Errorf("DevideByFive(%d,5) == %t, want %t", c.in, got, c.want)
+			t.Errorf("DevideByFive(%d) == %t, want %t", c.in, got, c.want)
 		}
 	}
 }
@@ -65,7 +65,7 @@ func TestContainThree(t *testing.T) {
 		{4, false},
 		{5, false},
 	} {
-		got := Contain(c.in, 3)
+		got := IsContainThree(c.in)
 		if got != c.want {
 			t.Errorf("Contain(%d,3) == %t, want %t", c.in, got, c.want)
 		}
@@ -82,12 +82,9 @@ func TestContainFive(t *testing.T) {
 		{4, false},
 		{5, true},
 	} {
-		got := Contain(c.in, 5)
+		got := IsContainFive(c.in)
 		if got != c.want {
-			t.Errorf("Contain(%d,5) == %t, want %t", c.in, got, c.want)
+			t.Errorf("Contain(%d) == %t, want %t", c.in, got, c.want)
 		}
 	}
-}
-func TestMain(t *testing.T) {
-	main()
 }

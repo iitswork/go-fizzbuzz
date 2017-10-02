@@ -6,26 +6,36 @@ import (
 	"strings"
 )
 
-// DevideBy return true if number can devide by devider
-func DevideBy(number int, devider int) bool {
-	return number%devider == 0
+// IsDevideBy return true if number can devide by three
+func IsDevideByThree(number int) bool {
+	return number%3 == 0
 }
 
-// Contain return true if word contain innumber
-func Contain(number int, word int) bool {
+// IsDevideBy return true if number can devide by five
+func IsDevideByFive(number int) bool {
+	return number%5 == 0
+}
+
+// IsContain return true if word contain Three
+func IsContainThree(number int) bool {
 	numberSting := strconv.Itoa(number)
 
-	wordString := strconv.Itoa(word)
-
-	return strings.Contains(numberSting, wordString)
+	return strings.Contains(numberSting, "3")
 }
 
-// FizzBuzz return Fizz if number can devide by three
-// FizzBuzz return Buzz if number can devide by five
+// IsContain return true if word contain Five
+func IsContainFive(number int) bool {
+	numberSting := strconv.Itoa(number)
+
+	return strings.Contains(numberSting, "5")
+}
+
+// FizzBuzz return Fizz if number can devide by three or contain a three
+// FizzBuzz return Buzz if number can devide by five or contain a five
 func FizzBuzz(number int) string {
-	if DevideBy(number, 3) || Contain(number, 3) {
+	if IsDevideByThree(number) || IsContainThree(number) {
 		return "Fizz"
-	} else if DevideBy(number, 5) || Contain(number, 5) {
+	} else if IsDevideByFive(number) || IsContainFive(number) {
 		return "Buzz"
 	} else {
 		return strconv.Itoa(number)
